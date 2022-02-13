@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="confetti.min.js"></script>
+    <script src="wordleScript.js"></script>
+    <script src="./removeBanner.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WRDL</title>
+</head>
+<body onpageshow="onFocus();">
+    <!-- <input id=''>
+    <button>test</button> -->
+    <h1 class="wordle_welcome">WORDLE - 4 LETTERS</h1>
+    <hr>
+
+    <table align="center" class="centerTable">
+        <tr>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="0" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)"  maxlength="1" id="1" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)"  maxlength="1" id="2" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="3" inputmode='none' data-disable-touch-keyboard></th>
+        </tr>
+        <tr>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="4" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="5" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="6" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="7" inputmode='none' data-disable-touch-keyboard></th>
+        </tr>
+        <tr>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="8" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="9" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="10" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="11" inputmode='none' data-disable-touch-keyboard></th>
+        </tr>
+        <tr>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="12" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="13" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="14" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="15" inputmode='none' data-disable-touch-keyboard></th>
+        </tr>
+        <tr>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="16" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="17" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="18" inputmode='none' data-disable-touch-keyboard></th>
+            <th><input type="text" onkeypress="return ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)" maxlength="1" id="19" inputmode='none' data-disable-touch-keyboard></th>
+        </tr>
+        <!-- <th>Enter:</style><button onclick="onEnterButtonClick()">test</button></th> -->
+    </table>
+
+    <!-- Keyboard -->
+    <div class="keyboardPosition">
+        <table align="center" style="margin-top: -8px;">
+            <tr>
+                <th><button class="keyButton" id='Q' onclick="stimulateKeypress(id);">Q</button></th>
+                <th><button class="keyButton" id='W' onclick="stimulateKeypress(id);">W</button></th>
+                <th><button class="keyButton" id='E' onclick="stimulateKeypress(id);">E</button></th>
+                <th><button class="keyButton" id='R' onclick="stimulateKeypress(id);">R</button></th>
+                <th><button class="keyButton" id='T' onclick="stimulateKeypress(id);">T</button></th>
+                <th><button class="keyButton" id='Y' onclick="stimulateKeypress(id);">Y</button></th>
+                <th><button class="keyButton" id='U' onclick="stimulateKeypress(id);">U</button></th>
+                <th><button class="keyButton" id='I' onclick="stimulateKeypress(id);">I</button></th>
+                <th><button class="keyButton" id='O' onclick="stimulateKeypress(id);">O</button></th>
+                <th><button class="keyButton" id='P' onclick="stimulateKeypress(id);">P</button></th>
+            </tr>
+        </table>
+        <table align="center" style="margin-top: -8px;">
+            <tr>
+                <th><button class="keyButton" id='A' onclick="stimulateKeypress(id);">A</button></th>
+                <th><button class="keyButton" id='S' onclick="stimulateKeypress(id);">S</button></th>
+                <th><button class="keyButton" id='D' onclick="stimulateKeypress(id);">D</button></th>
+                <th><button class="keyButton" id='F' onclick="stimulateKeypress(id);">F</button></th>
+                <th><button class="keyButton" id='G' onclick="stimulateKeypress(id);">G</button></th>
+                <th><button class="keyButton" id='H' onclick="stimulateKeypress(id);">H</button></th>
+                <th><button class="keyButton" id='J' onclick="stimulateKeypress(id);">J</button></th>
+                <th><button class="keyButton" id='K' onclick="stimulateKeypress(id);">K</button></th>
+                <th><button class="keyButton" id='L' onclick="stimulateKeypress(id);">L</button></th>
+            </tr>
+        </table>
+        <table align="center" style="margin-top: -8px;">
+            <tr>
+                <th><button class="specialButton" onclick="onEnterButtonClick();">ENTER</button></th>
+                <th><button class="keyButton" id='Z' onclick="stimulateKeypress(id);">Z</button></th>
+                <th><button class="keyButton" id='X' onclick="stimulateKeypress(id);">X</button></th>
+                <th><button class="keyButton" id='C' onclick="stimulateKeypress(id);">C</button></th>
+                <th><button class="keyButton" id='V' onclick="stimulateKeypress(id);">V</button></th>
+                <th><button class="keyButton" id='B' onclick="stimulateKeypress(id);">B</button></th>
+                <th><button class="keyButton" id='N' onclick="stimulateKeypress(id);">N</button></th>
+                <th><button class="keyButton" id='M' onclick="stimulateKeypress(id);">M</button></th>
+                <th><button class="specialButton" onclick="backslashPress();">DELETE</button></th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+          <a class="close" onclick="closePopup();">&times;</a>
+          <div style="color: white; margin-top: 75px; font-size: 20px; text-align: center;">
+            <b>YOU GOT IT RIGHT!</b><br>
+            well-done for the excellent job!
+          </div>
+        </div>
+      </div>
+</body>
+</html>
