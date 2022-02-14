@@ -288,7 +288,27 @@ function stimulateKeypress(letter)
 
 function copyToClipboard()
 {
-    
+    emoji_message = "FOURDLE:\n";
+    for(let i=0; i<tryNumber; i++) {
+        color = document.getElementById(i).style.backgroundColor;
+
+        if(color == "rgb(58, 58, 60)") {
+            emoji_message += "⬛";
+        }
+        else if(color == "rgb(201, 180, 88)") {
+            emoji_message += "🟨";
+        }
+        else if(color == "rgb(106, 170, 100)") {
+            emoji_message += "🟩";
+        }
+
+        if((i+1)%4 == 0) {
+            emoji_message += "\n";
+        }
+    }
+    emoji_message += "WORD: " + target_word;
+    console.log(emoji_message);
+    navigator.clipboard.writeText(emoji_message);
 }
 
 // Prints all the wordlist
