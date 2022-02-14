@@ -286,6 +286,11 @@ function stimulateKeypress(letter)
     // }
 }
 
+function copyToClipboard()
+{
+    
+}
+
 // Prints all the wordlist
 // for(let i=0; i<all_words.length; i++) {
 //     console.log(all_words[i] + ' ');
