@@ -56,6 +56,27 @@ function openPopup()
     document.getElementById('popup1').style.opacity = 1;
 }
 
+async function openPopupFailure()
+{
+    await sleep(450);
+    document.getElementById('popup2').style.position = 'fixed';
+    document.getElementById('popup2').style.visibility = "visible";
+    document.getElementById('popup2').style.opacity = 1;
+}
+
+async function closePopupFailure()
+{
+    document.getElementById('popup2').style.visibility = "invisible";
+    document.getElementById('popup2').style.opacity = 0;
+    await sleep(500);
+    document.getElementById('popup2').style.position = 'static';
+}
+
+function changePopupFailureText(word)
+{
+    document.getElementById('failurePopupText').innerHTML = 'THE WORD WAS: ' + word;
+}
+
 const startit = () => {
     setTimeout(function () {
       confetti.start();
@@ -79,9 +100,12 @@ function onFocus()
 }
 
 async function onEnterButtonClick(){
-    // this is the word, that the user guessed
+    // this is the word that the user guessed
     inputWord = document.getElementById(tryNumber+0).value + document.getElementById(tryNumber+1).value + document.getElementById(tryNumber+2).value+ document.getElementById(tryNumber+3).value
     inputWord = inputWord.toUpperCase();
+    //console.log(inputWord);
+    // check the last round
+
     // if the word is on the list, color the right cells of the solution
     //alert(inputWord);
     if(checkInputInWordlist(inputWord) == true){
@@ -161,7 +185,23 @@ async function onEnterButtonClick(){
             else if(colored_cells[i] == 2) color = '#6AAA64';
             document.getElementById(inputWord[i]).style.backgroundColor = color;
         }
-        onFocus(); // focus on the next word!
+        
+        if(tryNumber >= 20) {
+            let colorCounterMatch=0;
+            for(let i=0; i<4; i++)
+            {
+                if(colored_cells[i] == 2) colorCounterMatch++;
+            }
+            if(colorCounterMatch != 4) {
+                changePopupFailureText(target_word);
+                openPopupFailure();
+            }
+        }
+        else {
+            //alert("wtf bruh")
+            onFocus(); // focus on the next word!
+        }
+        onFocus();
     }
     else{
         //alert("The word is not in the list...")
