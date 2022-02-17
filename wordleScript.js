@@ -73,7 +73,7 @@ var focused_button_id = 0; // the current focused button
 
 function onFocus()
 {
-    console.log("Merry Christmas!");
+    //console.log("Merry Christmas!");
     // openPopup();
     document.getElementById(tryNumber).focus();
 }
@@ -163,8 +163,22 @@ async function onEnterButtonClick(){
         }
         onFocus(); // focus on the next word!
     }
-    else{ 
+    else{
         //alert("The word is not in the list...")
+        for(let i=0; i<4; i++){
+            document.getElementById(i+tryNumber).animate([
+                // keyframes
+                { transform: 'translateX(0px)' },
+                { transform: 'translateX(-15px)' },
+                { transform: 'translateX(0px)' },
+                { transform: 'translateX(15px)' },
+                { transform: 'translateX(0px)' }
+            ],{
+                // timing options
+                duration: 50,
+                iterations: 1
+            });
+        }
     };
 }
 
