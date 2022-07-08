@@ -1,5 +1,5 @@
 # Fourdle - Wordle's 4 letter's version
-This is my version of Wordle, but with 4 letters in each word instead of 5
+Wordle with 4 letters in each word instead of 5
 there are some changes from the original wordle,
 - the first change is the case of putting for example: 'AABB', when the word is 'ABCD'. in that case you'll get yellows on both of the 'A'.
 - second, there 4 letters instead of 5.
