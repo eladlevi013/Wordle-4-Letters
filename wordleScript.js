@@ -170,11 +170,11 @@ async function onEnterButtonClick(){
                 { transform: 'rotatex(360deg)'},
             ],{
                 // timing options
-                duration: 300,
+                duration: 500,
                 iterations: 1
             });
             document.getElementById(tryNumber-4+i).style.backgroundColor = color;
-            await sleep(230);
+            await sleep(400);
         }
 
         // after we colored the actual word, we want color the keyboard
