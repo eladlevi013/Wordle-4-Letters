@@ -1,5 +1,5 @@
 # Fourdle - Wordle's 4 letter's version
-- second, there 4 letters instead of 5.
+- there are 4 letters instead of 5.
 - the word is different everytime the page refreshes
 
 
